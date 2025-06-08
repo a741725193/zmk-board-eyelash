@@ -1,3 +1,4 @@
+name:"eyelash!nano"
 build:
   settings:
     board_root: .
