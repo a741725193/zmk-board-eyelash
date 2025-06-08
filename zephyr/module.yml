@@ -1,4 +1,5 @@
 name: "eyelash_nano"
 build:
+  kconfig: boards/arm/eyelash_nano/Kconfig
   settings:
     board_root: .
