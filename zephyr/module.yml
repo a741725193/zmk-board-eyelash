@@ -1,4 +1,4 @@
-name: "eyelash!oled"
+name: "eyelash!nano"
 build:
   settings:
     board_root: .
