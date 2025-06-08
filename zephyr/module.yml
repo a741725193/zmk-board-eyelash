@@ -1,5 +1,5 @@
 name: "eyelash_nano"
-cmake: ./boards/arm/eyelash_nano
+cmake: .
 build:
   settings:
     board_root: .
