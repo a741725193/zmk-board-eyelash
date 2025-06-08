@@ -66,11 +66,72 @@ include:
 
 要在本地构建固件，你需要设置ZMK开发环境。请参考[ZMK文档](https://zmk.dev/docs/development/setup)获取详细说明。
 
-简要步骤：
+#### 配置west.yml
+
+本仓库在`config/west.yml`中已经配置了必要的依赖：
+
+```yaml
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: eyelash
+      url-base: https://github.com/a741725193
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-board-eyelash
+      remote: eyelash
+      revision: main
+  self:
+    path: config
+```
+
+这个配置确保west可以找到eyelash_nano板的定义。
+
+#### 构建步骤
 
 1. 克隆ZMK仓库
-2. 将本仓库作为模块添加到ZMK的`app/boards`目录
-3. 使用west构建固件
+   ```bash
+   git clone https://github.com/zmkfirmware/zmk.git
+   cd zmk
+   ```
+
+2. 将本仓库作为用户配置添加到ZMK
+   ```bash
+   # 在ZMK根目录下
+   mkdir -p app/boards/shields
+   git clone https://github.com/a741725193/zmk-board-eyelash.git config
+   ```
+
+3. 运行`west update`更新所有依赖
+   ```bash
+   west init -l config
+   west update
+   ```
+
+4. 使用west构建固件，指定eyelash_nano作为板子
+   ```bash
+   west build -b eyelash_nano -d build/corne_left -- -DSHIELD=corne_left
+   west build -b eyelash_nano -d build/corne_right -- -DSHIELD=corne_right
+   ```
+
+#### 常见问题解决
+
+如果遇到错误提示 "No board named 'eyelash_nano' found"，可能是以下原因：
+
+1. west.yml配置不正确或未被正确加载
+2. 未运行`west update`更新依赖
+3. zmk-board-eyelash仓库未被正确克隆或路径不正确
+
+解决方法：
+
+1. 确认config/west.yml中包含了zmk-board-eyelash项目
+2. 运行`west update`确保所有依赖都已更新
+3. 检查boards/arm/eyelash_nano目录是否存在
+4. 确保zephyr/module.yml中设置了正确的board_root
 
 ## 使用方法
 
