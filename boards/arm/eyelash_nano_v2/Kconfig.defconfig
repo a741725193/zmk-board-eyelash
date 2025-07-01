@@ -1,0 +1,12 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if BOARD_EYELASH_NANO_V2
+
+config BOARD
+    default "eyelash_nano_v2"
+
+config BT_CTLR
+    default BT
+
+endif # BOARD_EYELASH_NANO

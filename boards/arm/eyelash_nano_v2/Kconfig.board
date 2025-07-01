@@ -1,0 +1,8 @@
+#
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+#
+
+config BOARD_EYELASH_NANO_V2
+    bool "eyelash nano board"
+    depends on SOC_NRF52832_QFAA

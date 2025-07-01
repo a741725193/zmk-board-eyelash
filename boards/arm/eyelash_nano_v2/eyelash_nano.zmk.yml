@@ -1,0 +1,9 @@
+file_format: "1"
+id: eyelash_nano
+name: eyelash nano
+type: board
+arch: arm
+outputs:
+  - usb
+  - ble
+url: https://github.com/a741725193/zmk-board-eyelash
