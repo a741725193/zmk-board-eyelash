@@ -10,7 +10,7 @@
 
 / {
     model = "eyelash_nano_v2";
-    compatible = "eyelash,nano_v2","nordic,nrf52832-qfaa", "nordic,nrf52832";;
+    compatible = "eyelash,nano_v2"
 
     chosen {
         zephyr,console = &uart0;
@@ -22,13 +22,6 @@
 		zephyr,flash = &flash0;
         zephyr,code-partition = &slot0_partition;
         zmk,battery = &vbatt;
-    };
-    
-    // Node name must match original "EXT_POWER" label to preserve user settings.
-    EXT_POWER {
-        compatible = "zmk,ext-power-generic";
-        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
-        init-delay-ms = <50>;
     };
 
     vbatt: vbatt {
@@ -71,11 +64,6 @@
         ngpios = <16>;
     };
 };
-
-zephyr_udc0: &usbd {
-    status = "okay";
-};
-
 
 &flash0 {
 	/*
