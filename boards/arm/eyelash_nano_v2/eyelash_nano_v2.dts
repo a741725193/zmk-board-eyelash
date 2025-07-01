@@ -6,7 +6,7 @@
 /dts-v1/;
 
 #include <nordic/nrf52832_qfaa.dtsi>
-#include "eyelash_nano-pinctrl.dtsi"
+#include "eyelash_nano_v2-pinctrl.dtsi"
 
 / {
     model = "eyelash_nano_v2";
