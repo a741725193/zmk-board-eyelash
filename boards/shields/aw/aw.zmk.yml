@@ -1,0 +1,12 @@
+file_format: "1"
+id: aw
+name: AW
+type: shield
+url: https://github.com/a741725193/zmk-board-eyelash
+requires: [eyelash_nano_v2]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - aw

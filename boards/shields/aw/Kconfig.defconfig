@@ -1,0 +1,6 @@
+if SHIELD_OFFSETKEY
+config ZMK_KEYBOARD_NAME
+	default "aw"
+endif
+config I2C
+    default y
