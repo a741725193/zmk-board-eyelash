@@ -10,7 +10,7 @@
 
 / {
     model = "eyelash_nano_v2";
-    compatible = "eyelash,nano_v2"
+    compatible = "eyelash,nano_v2";
 
     chosen {
         zephyr,console = &uart0;
