@@ -1,0 +1,11 @@
+file_format: "1"
+id: jm16
+name: JM16
+type: shield
+url: https://github.com/a741725193/zmk-config-jm
+requires: [eyelash_nano_v2]
+features:
+  - keys
+outputs:
+  - ble
+
