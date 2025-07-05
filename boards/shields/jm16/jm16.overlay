@@ -6,14 +6,14 @@
 
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/led/led.h>
+#include "jm16-layout.dtsi"
 
 / {
 
 	chosen {
 
         zmk,kscan = &default_kscan;
-        zmk,matrix-transform = &default_transform;
-        zmk,battery = &vbatt;
+        zmk,physical-layout = &jm16_layout;
         zmk,underglow = &led_strip;
 	};
     
