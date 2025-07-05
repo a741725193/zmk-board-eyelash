@@ -51,8 +51,7 @@
 	status = "disabled";
 };
 
-zephyr_udc0: &usbd {
-    compatible = "nordic,nrf-usbd";
+zephyr_udc0 : &uart0{
     status = "okay";
 };
 
