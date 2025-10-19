@@ -9,8 +9,4 @@ include:
   - board: eyelash_nano_v2
     shield: aw
   - board: eyelash_nano_v2
-    shield: jm16
-  - board: eyelash_nano_v2
-    shield: jm17
-  - board: eyelash_nano_v2
     shield: settings_reset
